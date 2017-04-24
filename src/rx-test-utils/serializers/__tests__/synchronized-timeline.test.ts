@@ -1,7 +1,7 @@
 import 'jest';
 
-import { Timeline } from '../models/timeline'
-import { formatSynchronizedTimeline } from '../serializers/synchronized-timeline';
+import { Timeline } from '../../models/timeline'
+import { formatSynchronizedTimeline } from '../synchronized-timeline';
 
 
 function expectTimelines(...timelines: Timeline[]) {
