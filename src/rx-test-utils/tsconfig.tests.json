@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "sourceMap": false,
+        "inlineSourceMap": true,
+        "module": "commonjs",
+        "target": "es2015",
+        "jsx": "react"
+    },
+    "include": [
+        "./**/*.test.tsx",
+        "./**/*.test.ts"
+    ]
+}

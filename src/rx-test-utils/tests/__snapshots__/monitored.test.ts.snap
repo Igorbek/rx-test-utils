@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`monitor it captures data 1`] = `
+Object {
+  "subscriptions": Array [
+    Object {
+      "messages": Array [
+        Object {
+          "kind": "N",
+          "order": 0,
+          "time": 20,
+          "value": "1",
+        },
+        Object {
+          "kind": "N",
+          "order": 0,
+          "time": 40,
+          "value": "2",
+        },
+        Object {
+          "kind": "N",
+          "order": 0,
+          "time": 60,
+          "value": "3",
+        },
+        Object {
+          "kind": "N",
+          "order": 0,
+          "time": 90,
+          "value": "4",
+        },
+        Object {
+          "kind": "C",
+          "order": 1,
+          "time": 90,
+        },
+      ],
+      "subscribedOrder": 0,
+      "subscribedTime": 0,
+      "unsubscribedOrder": 2,
+      "unsubscribedTime": 90,
+    },
+    Object {
+      "messages": Array [
+        Object {
+          "kind": "N",
+          "order": 1,
+          "time": 20,
+          "value": "1",
+        },
+        Object {
+          "kind": "N",
+          "order": 1,
+          "time": 40,
+          "value": "2",
+        },
+        Object {
+          "kind": "N",
+          "order": 1,
+          "time": 60,
+          "value": "3",
+        },
+        Object {
+          "kind": "N",
+          "order": 3,
+          "time": 90,
+          "value": "4",
+        },
+        Object {
+          "kind": "C",
+          "order": 4,
+          "time": 90,
+        },
+      ],
+      "subscribedOrder": 1,
+      "subscribedTime": 0,
+      "unsubscribedOrder": 5,
+      "unsubscribedTime": 90,
+    },
+  ],
+}
+`;

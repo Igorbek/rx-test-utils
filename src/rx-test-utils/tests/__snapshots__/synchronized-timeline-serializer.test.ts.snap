@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`synchronized timeline serializer contracts long time 1`] = `
+"
+long event: -a---~41~---|
+"
+`;
+
+exports[`synchronized timeline serializer contracts long time 2`] = `
+"
+long subscription: ^---~42~---<
+"
+`;
+
+exports[`synchronized timeline serializer contracts long time 3`] = `
+"
+stream 1:           ^--------~42~--------<
+stream 2: --------~72~---------           
+"
+`;
+
+exports[`synchronized timeline serializer renders a single event 1`] = `
+"
+stream: a
+"
+`;
+
+exports[`synchronized timeline serializer renders complex timeline 1`] = `
+"
+             source: --a--b-c--d----e
+source subscription:      ^--------< 
+             result: -------c--d-----
+"
+`;
+
+exports[`synchronized timeline serializer renders events of same time and same order 1`] = `
+"
+stream 1: --ab
+stream 2: --de
+"
+`;
+
+exports[`synchronized timeline serializer renders events of same time in order 1`] = `
+"
+stream 1: --a(ab)---c
+stream 2: --de-----f 
+"
+`;
+
+exports[`synchronized timeline serializer renders labels aligned 1`] = `
+"
+       stream: 
+second stream: 
+ third stream: 
+"
+`;
+
+exports[`synchronized timeline serializer renders leading time before first event 1`] = `
+"
+stream: ----------a
+"
+`;
+
+exports[`synchronized timeline serializer renders multiple events of the same order 1`] = `
+"
+label: ab
+"
+`;
+
+exports[`synchronized timeline serializer renders time between events 1`] = `
+"
+stream: a----------b
+"
+`;

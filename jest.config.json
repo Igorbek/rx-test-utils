@@ -1,0 +1,24 @@
+{
+    "automock": false,
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js"
+    ],
+    "modulePaths": [
+        "<rootDir>/src"
+    ],
+    "unmockedModulePathPatterns": [],
+    "transform": {
+        "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+    "testRegex": "\\.test\\.(ts|tsx)$",
+    "testEnvironment": "jest-environment-node-debug",
+    "notify": false,
+    "verbose": true,
+    "globals": {
+        "window": {},
+        "__TS_CONFIG__": "src/rx-test-utils/tsconfig.tests.json"
+    }
+}
