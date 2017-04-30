@@ -1,4 +1,4 @@
-import {Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 export interface WatchedObservable<T> extends Observable<T> {
     readonly subscriptions: Observable<Observable<WatchNotification<T>>>;
