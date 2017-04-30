@@ -16,6 +16,12 @@ exports[`synchronized timeline serializer contracts long time 3`] = `
 "
 stream 1:           ^--------~42~--------<
 stream 2: --------~72~---------           
+
+stream 1 stream 2
+         | ~30
+| <      |
+| ~ 42   |
+| >      
 "
 `;
 
@@ -30,6 +36,21 @@ exports[`synchronized timeline serializer renders complex timeline 1`] = `
              source: --a--b-c--d----e
 source subscription:      ^--------< 
              result: -------c--d-----
+
+src   sub    res
+|            |       0
+|            |
+|a           |       2
+|            |
+|            |
+|b    |<     |       5
+|     |      |
+|c    |      |c      7
+|     |      |
+|     |      |
+|     |      |
+|     |>     |       11
+|e           |       12
 "
 `;
 

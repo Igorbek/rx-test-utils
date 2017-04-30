@@ -38,7 +38,9 @@ interface RecordedObservable<T> {
     subscriptions: RecordedSubscription<T>[];
 }
 
-export function createRecordingMonitor<T>(scheduler: IScheduler, timeOrderCoordinator: TimeOrderCoordinator): { monitor: IObservableMonitor<T>; recorded: RecordedObservable<T>; } {
+export function createRecordingMonitor<T>(
+    scheduler: IScheduler,
+    timeOrderCoordinator: TimeOrderCoordinator): { monitor: IObservableMonitor<T>; recorded: RecordedObservable<T>; } {
     const recorded: RecordedObservable<T> = {
         subscriptions: []
     };

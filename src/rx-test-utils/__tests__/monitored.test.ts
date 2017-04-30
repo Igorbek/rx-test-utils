@@ -1,17 +1,16 @@
 import 'jest';
 
-import * as Rx from 'rxjs';
 import { TestMessage } from "rxjs/testing/TestMessage";
 import { IScheduler } from 'rxjs/Scheduler';
-import { Observer } from 'rxjs/Observer'
-import { Observable } from 'rxjs/Observable';
+import { Observer, Observable } from 'rxjs'
+import { TestScheduler } from 'rxjs/testing/TestScheduler'
 
 import { createRecordingMonitor, createTimeOrderCoordinator } from '../monitors/recording';
 import { monitored } from '../monitor';
 
 describe('monitor', () => {
     it('it captures data', () => {
-        const testScheduler = new Rx.TestScheduler((a, e) => a === e);
+        const testScheduler = new TestScheduler((a, e) => a === e);
         const { monitor, recorded } = createRecordingMonitor(testScheduler, createTimeOrderCoordinator());
 
         const source = testScheduler.createHotObservable('--1-2-3--4--5-')
