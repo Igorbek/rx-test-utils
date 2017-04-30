@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WatchableObservable it captures data 1`] = `
+Object {
+  "subscriptions": Array [
+    Object {
+      "notifications": Array [
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "1",
+          },
+          "time": Array [
+            20,
+            0,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "2",
+          },
+          "time": Array [
+            40,
+            0,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "3",
+          },
+          "time": Array [
+            60,
+            0,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "4",
+          },
+          "time": Array [
+            90,
+            0,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "C",
+          },
+          "time": Array [
+            90,
+            1,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "U",
+          },
+          "time": Array [
+            90,
+            2,
+          ],
+        },
+      ],
+      "subscribed": Array [
+        0,
+        0,
+      ],
+      "unsubscribed": Array [
+        90,
+        2,
+      ],
+    },
+    Object {
+      "notifications": Array [
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "1",
+          },
+          "time": Array [
+            20,
+            1,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "2",
+          },
+          "time": Array [
+            40,
+            1,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "3",
+          },
+          "time": Array [
+            60,
+            1,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "N",
+            "value": "4",
+          },
+          "time": Array [
+            90,
+            3,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "C",
+          },
+          "time": Array [
+            90,
+            4,
+          ],
+        },
+        Object {
+          "notification": Object {
+            "kind": "U",
+          },
+          "time": Array [
+            90,
+            5,
+          ],
+        },
+      ],
+      "subscribed": Array [
+        0,
+        1,
+      ],
+      "unsubscribed": Array [
+        90,
+        5,
+      ],
+    },
+  ],
+}
+`;

@@ -93,6 +93,62 @@ export function createRecordingMonitor<T>(
     return { monitor, recorded };
 }
 
+export function createRecordingObserver<T>(
+    scheduler: IScheduler,
+    timeOrderCoordinator: TimeOrderCoordinator): { monitor: IObservableMonitor<T>; recorded: RecordedObservable<T>; } {
+    const recorded: RecordedObservable<T> = {
+        subscriptions: []
+    };
+
+    const monitor: IObservableMonitor<T> = {
+        subscribe() {
+            const subscribedTime = scheduler.now(), subscribedOrder = timeOrderCoordinator.nextOrder(subscribedTime);
+            const subscription: RecordedSubscription<T> = {
+                subscribedTime,
+                subscribedOrder,
+                messages: []
+            };
+            recorded.subscriptions.push(subscription);
+
+            return {
+                next(value) {
+                    const time = scheduler.now(), order = timeOrderCoordinator.nextOrder(time);
+                    subscription.messages.push({
+                        time,
+                        order,
+                        kind: 'N',
+                        value
+                    });
+                },
+                complete() {
+                    const time = scheduler.now(), order = timeOrderCoordinator.nextOrder(time);
+                    subscription.messages.push({
+                        time,
+                        order,
+                        kind: 'C'
+                    });
+                },
+                error(error) {
+                    const time = scheduler.now(), order = timeOrderCoordinator.nextOrder(time);
+                    subscription.messages.push({
+                        time,
+                        order,
+                        kind: 'E',
+                        error
+                    });
+                },
+                unsubscribe() {
+                    subscription.unsubscribedTime = scheduler.now();
+                    subscription.unsubscribedOrder = timeOrderCoordinator.nextOrder(subscription.unsubscribedTime);
+                }
+            }
+        }
+    };
+
+    return { monitor, recorded };
+}
+
+
 export interface TimeOrderCoordinator {
     nextOrder(time: number): number;
 }
